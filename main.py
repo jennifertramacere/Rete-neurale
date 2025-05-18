@@ -7,6 +7,7 @@ import pandas as pd
 import sys
 print(sys.executable)
 
+#okk
 
 data = pd.read_csv('diabetes.csv')
 #print(data.head())
