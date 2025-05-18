@@ -20,16 +20,16 @@ x = scaler.fit_transform(x)
 
 
 
-#print(x.head())
-#print(y.head())
+print(x.head())
+print(y.head())
 
 import matplotlib.pyplot as plt
 
-#plt.scatter(x.iloc[:, 6], x.iloc[:, 7], c=y, cmap='bwr')
-#plt.xlabel(x.columns[6])
-#plt.ylabel(x.columns[7])
-#plt.title('Diabetes Data: Feature 1 vs Feature 2')
-#plt.show()
+plt.scatter(x.iloc[:, 6], x.iloc[:, 7], c=y, cmap='bwr')
+plt.xlabel(x.columns[6])
+plt.ylabel(x.columns[7])
+plt.title('Diabetes Data: Feature 1 vs Feature 2')
+plt.show()
 
 
 
@@ -48,11 +48,7 @@ model.compile(
     metrics=['accuracy']
 )
 
-from sklearn.model_selection import train_test_split
 
-x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=42)
-
-history = model.fit(x_train, y_train, epochs=100, validation_data=(x_test, y_test))
 
 
 epochs = 100 # addestra il modello - ha passato 100 volte l'intero dataset X per imparare
