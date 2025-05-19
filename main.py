@@ -21,18 +21,17 @@ x = scaler.fit_transform(x)
 
 
 
-print(x.head())
+print(pd.DataFrame(x).head())
 print(y.head())
 
+# Viene creato uno scatter plot tra due feature per osservare come i pazienti si distribuiscono rispetto all’Outcome
 
-
-plt.scatter(x.iloc[:, 6], x.iloc[:, 7], c=y, cmap='bwr')
-plt.xlabel(x.columns[6])
-plt.ylabel(x.columns[7])
+x_df = pd.DataFrame(x, columns=data.drop('Outcome', axis=1).columns)
+plt.scatter(x_df['BMI'], x_df['Age'], c=y, cmap='bwr')
+plt.xlabel(x_df.columns[6])
+plt.ylabel(x_df.columns[7]) 
 plt.title('Diabetes Data: Feature 1 vs Feature 2')
 plt.show()
-
-
 
 
 model = k.Sequential([
@@ -50,9 +49,8 @@ model.compile(
 )
 
 
-epochs = 100 # addestra il modello - ha passato 100 volte l'intero dataset X per imparare
-model.fit(x,y,epochs=epochs) # x: dataset input, y: dataset output
-
+epochs = 100 # addestra il modello - ha passato 100 volte l'intero dataset x per imparare
+history = model.fit(x,y,epochs=epochs) # x: dataset input, y: dataset output
 plt.figure(figsize=(10,5))
 plt.plot(range(epochs), model.history.history['loss']) # asse x epoche e asse y loss (funzione di perdita)
 plt.plot(range(epochs), model.history.history['accuracy'], label='Accuracy')
