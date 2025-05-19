@@ -4,7 +4,7 @@ Questo script implementa una rete neurale semplice usando TensorFlow/Keras per p
 
 Ogni riga rappresenta un paziente, e ogni colonna è una caratteristica medica (es. pressione, BMI, insulina, ecc.), mentre la colonna Outcome rappresenta la diagnosi non diabetico o  diabetico tramite 0 e 1. 
 
-Viene utilizzata una rete composta da due layer con 16 neuroni ciascuno e funzione di attivazione ReLu, e un layer di output con funzione di attivazione Sigmoid per la classificazione binaria. Il modello viene addestrato per 100 epoche, se la probabilità è >= 0.5, il paziente viene classificato come diabetico, non diabetico altrimenti. 
+Viene utilizzata una rete composta da due layer con 16 neuroni ciascuno e funzione di attivazione ReLu, e un layer di output con funzione di attivazione Sigmoid per la classificazione binaria. Il modello viene addestrato per 100 epoche. Se la probabilità prevista dal modello è >= 0.5, il paziente viene classificato come diabetico, non diabetico altrimenti. 
 
 Model: "sequential"
 _________________________________________________________________
@@ -250,7 +250,7 @@ Visualizzazione delle y predette dal modello convertite in classi 0/1 tramite np
  1 0 0 1 1 1 1 0 1 1 1 0 0 1 1 1 0 1 0 1 0 1 0 0 0 0 1 0]
 
 
-Dopo l'addestramento il modello ha raggiunto una Loss (funzione di perdita) = 0.37 e una accuracy dell'82.29% sull'intero dataset. 
+Dopo l'addestramento il modello ha raggiunto una Loss (funzione di perdita) = 0.37 e una Accuracy dell'82.29% sull'intero dataset. 
 
 ## Contenuto
 
