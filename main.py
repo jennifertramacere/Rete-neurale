@@ -60,7 +60,6 @@ plt.show()
 
 
 y_pred = model.predict(x)
-print(y_pred)
 
 y_pred_class = np.where(y_pred[:,0] >= 0.5, 1,0)
 print(y_pred_class)
