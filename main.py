@@ -31,6 +31,7 @@ plt.scatter(x_df['BMI'], x_df['Age'], c=y, cmap='bwr')
 plt.xlabel(x_df.columns[6])
 plt.ylabel(x_df.columns[7]) 
 plt.title('Diabetes Data: Feature 1 vs Feature 2')
+plt.savefig('features.png')  
 plt.show()
 
 

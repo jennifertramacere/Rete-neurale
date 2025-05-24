@@ -6,7 +6,7 @@ Ogni riga rappresenta un paziente, e ogni colonna è una caratteristica medica (
 
 Viene utilizzata una rete composta da due layer con 16 neuroni ciascuno e funzione di attivazione ReLu, e un layer di output con funzione di attivazione Sigmoid per la classificazione binaria. Il modello viene addestrato per 100 epoche. Se la probabilità prevista dal modello è >= 0.5, il paziente viene classificato come diabetico, non diabetico altrimenti. 
 
-Model: "sequential"
+
 _________________________________________________________________
  Layer (type)                Output Shape              Param #   
 =================================================================
